@@ -1,0 +1,48 @@
+//Adding elements to the Array
+
+//push() allows us to add a new element to the end of array and returns length of changed array
+let array = [2,5,8];
+let arrayLength = array.length;
+printResults(array, arrayLength);
+arrayLength = array.push(78);
+printResults(array, arrayLength);
+
+//splice() method which place elements to the array by index and can remove elements from array starting from the idex we intended and a quantity, returns removed elements
+let removedElement  = array.splice(1,2,7)
+printResults(removedElement,array);
+
+//concat() It's returns a new combined array, without modifying originals and we can add just a pull o values as vell.
+let newArray = [5,71,123]
+let newConcatedArray = array.concat(newArray); 
+newConcatedArray = newConcatedArray.concat(99,200);
+printResults(newConcatedArray);
+printResults(array,newArray);
+
+// Deleting elements from Array.
+
+//pop() remove element from the end, and returns it.
+let lastElement = newConcatedArray.pop();
+printResults(lastElement, newConcatedArray);
+
+//shift() delete first element, and returns it.
+let firstElement = newConcatedArray.shift();
+printResults(firstElement, newConcatedArray);
+
+//splice(1,1) can delete elemets by index and quantity here we would remove one element under the index 1.
+let removedByIndexElement = newConcatedArray.splice(1,1);
+printResults(removedByIndexElement, newConcatedArray);
+
+
+
+
+
+
+
+
+
+
+
+function printResults(res1, res2){
+    console.log(res1);
+    console.log(res2);
+}
