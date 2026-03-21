@@ -83,7 +83,7 @@ printResults(array.sort());
 printResults(array.reverse());
 
 
-function printResults(res1, res2) {
+export function printResults(res1, res2) {
     if (res1 != null && res1 != undefined) {
         console.log(res1);
     }
