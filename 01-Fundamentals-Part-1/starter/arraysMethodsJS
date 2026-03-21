@@ -1,24 +1,25 @@
-//Adding elements to the Array
+
+////////////////////Adding elements to the Array/////////////////////////////
 
 //push() allows us to add a new element to the end of array and returns length of changed array
-let array = [2,5,8];
+let array = [2, 5, 8];
 let arrayLength = array.length;
 printResults(array, arrayLength);
 arrayLength = array.push(78);
 printResults(array, arrayLength);
 
 //splice() method which place elements to the array by index and can remove elements from array starting from the idex we intended and a quantity, returns removed elements
-let removedElement  = array.splice(1,2,7)
-printResults(removedElement,array);
+let removedElement = array.splice(1, 2, 7)
+printResults(removedElement, array);
 
 //concat() It's returns a new combined array, without modifying originals and we can add just a pull o values as vell.
-let newArray = [5,71,123]
-let newConcatedArray = array.concat(newArray); 
-newConcatedArray = newConcatedArray.concat(99,200);
+let newArray = [5, 71, 123]
+let newConcatedArray = array.concat(newArray);
+newConcatedArray = newConcatedArray.concat(99, 200);
 printResults(newConcatedArray);
-printResults(array,newArray);
+printResults(array, newArray);
 
-// Deleting elements from Array.
+/////////////////////Deleting elements from Array.////////////////////////////
 
 //pop() remove element from the end, and returns it.
 let lastElement = newConcatedArray.pop();
@@ -29,20 +30,64 @@ let firstElement = newConcatedArray.shift();
 printResults(firstElement, newConcatedArray);
 
 //splice(1,1) can delete elemets by index and quantity here we would remove one element under the index 1.
-let removedByIndexElement = newConcatedArray.splice(1,1);
+let removedByIndexElement = newConcatedArray.splice(1, 1);
 printResults(removedByIndexElement, newConcatedArray);
 
+//delete a key word which would remove only the value of the element from array by inex but wont remove the cell itself
+//so the length of array won't change and there would be undefined.[7, 5, …, 123, 99]
+
+delete newConcatedArray[2];
+printResults(newConcatedArray);
+
+////////////////Find elements and index of element in array///////////////////////////////////////
+//find(e=> e === 2) would return first element that matches the value 2 in shown predicate or undefined if there is no such element at all, and it won't modify the array itself
+let findedElement = array.find(e => e === 2);
+printResults(findedElement, array);
+
+//indexOf(2) would return an index of element if it exists in array if not it returns -1
+//index(1,7) we elso can specify from which index start search element in array 
+let elementIndex = array.indexOf(2);
+printResults(elementIndex);
+elementIndex = array.indexOf(7,1);
+printResults(elementIndex);
 
 
+//bonus section additional method which takes as argument a function and returns index or -1.
+const context = { limit: 78};
+let newLimitIndex = array.findIndex(function(e) {
+  return e == this.limit; // 'this' becomes the 'context' object
+}, context);
+printResults(array[newLimitIndex]);
 
 
+//////////////////Sorting and Reversing arays///////////////
+//sort() mutates array and returns us sorted array in alphabetical order A-Z
+let names = ['James','Alica', 'Fatixa', 'Maria', 'Bert'];
+names.sort();
+printResults(names);
+//sort((a,b) => b.localeCompare(a)) this would allow us to manage sorting directions for strings arrays in this case from Z-A 
+names.sort((a,b) => b.localeCompare(a));
+printResults(names)
+
+//if array is a colection of numbers we need add comparator to sort or sort would work with them like a strings
+//ascending order.
+printResults([11,2,22,1].sort((a, b) => a - b));
+//descending order.
+printResults(array.sort((a,b) => b - a));
+//here is an ex how sort works with numbers without comparator - substraction expression.
+array.push(1,11,13);
+printResults(array);
+printResults(array.sort());
+
+//reverse() just reverse an order of elements in array 
+printResults(array.reverse());
 
 
-
-
-
-
-function printResults(res1, res2){
-    console.log(res1);
-    console.log(res2);
+function printResults(res1, res2) {
+    if (res1 != null && res1 != undefined) {
+        console.log(res1);
+    }
+    if (res2?.length > 0) {
+        console.log(res2);
+    }
 }
