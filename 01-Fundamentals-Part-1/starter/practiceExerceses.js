@@ -1,4 +1,4 @@
-import { printResults } from "./arraysMethodsJS.js";
+//import { printResults } from "./arraysMethodsJS.js";
 
 // 1. Create an empty array to use as a shopping list.
 // 2. Add Milk , Bread , and Apples to your list.
@@ -61,7 +61,7 @@ import { printResults } from "./arraysMethodsJS.js";
 //     make: 2025,
 //     color: "Red",
 //     engineCapacity: 2.00,
-    
+
 // }
 // const newColor = 'Blue';
 // const isForSale = true;
@@ -101,3 +101,29 @@ import { printResults } from "./arraysMethodsJS.js";
 //   people = people.concat(friend1,friend2,friend3);
 //   people.unshift()
 // printResults(people);
+
+// let counter = 0;
+// let step = 1;
+// do {
+//     console.log(counter);
+//     counter += step;
+// } while (counter < 100)
+
+const myWork = [];
+
+for (let i = 1; i <= 10; i++) {
+    let Lesson;
+    myWork.push((() => {
+        return {
+            name: `Lesson ${i}`,
+            status: i % 2 === 0 ? true : false
+};
+    })())
+}
+for(let item of myWork){
+    console.log(item)
+  for(let property in item){
+    console.log(item[property])
+  }
+}
+
