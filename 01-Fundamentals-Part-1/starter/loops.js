@@ -27,7 +27,7 @@ for (let item of lessons) {
 //for in loop to iterate through objects properties
 for (let item of lessons) {
     for (let property in item) {
-        console.log(item[property]);
+        console.log(property ,item[property]);
     }
 }
 ///////////////// Loopin over object ////////////////
@@ -59,3 +59,16 @@ for(let item of lessons){
 for(const[k,v] of Object.entries(lessons[0])){
     console.log(k,v);
 }
+//labeled block allows manipulate outer loop from inner loop, like  break operation 
+outer : for(let item of lessons){
+    let i = 1;
+    console.log(i);
+    for(const[key, value] of Object.entries(item)){
+        console.log(key, value)
+        if(value.startsWith('L')){
+            console.log( value + '55')
+            break outer;
+        }
+    }
+}
+

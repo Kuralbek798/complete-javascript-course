@@ -109,21 +109,31 @@
 //     counter += step;
 // } while (counter < 100)
 
-const myWork = [];
+// const myWork = [];
 
-for (let i = 1; i <= 10; i++) {
-    let Lesson;
-    myWork.push((() => {
-        return {
-            name: `Lesson ${i}`,
-            status: i % 2 === 0 ? true : false
-};
-    })())
-}
-for(let item of myWork){
-    console.log(item)
-  for(let property in item){
-    console.log(item[property])
-  }
-}
+// for (let i = 1; i <= 10; i++) {
+//     let Lesson;
+//     myWork.push((() => {
+//         return {
+//             name: `Lesson ${i}`,
+//             status: i % 2 === 0 ? true : false
+// };
+//     })())
+// }
+// for(let item of myWork){
+//     console.log(item)
+//   for(let property in item){
+//     console.log(item[property])
+//   }
+// }
 
+let stringVariable = '';
+let sckipValue = 5;
+for(let i = 0;i < 10; i++){
+ if(i === sckipValue){
+    //continue;
+    break;
+ }
+ stringVariable += ','.concat(i);
+}
+console.log(stringVariable)
