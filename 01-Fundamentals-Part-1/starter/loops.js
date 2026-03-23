@@ -59,7 +59,7 @@ for(let item of lessons){
 for(const[k,v] of Object.entries(lessons[0])){
     console.log(k,v);
 }
-//labeled block allows manipulate outer loop from inner loop, like  break operation 
+//labeled block allows manipulate outer loop from inner loop, only for  break operation not working with continue.
 outer : for(let item of lessons){
     let i = 1;
     console.log(i);
