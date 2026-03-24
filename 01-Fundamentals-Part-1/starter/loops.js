@@ -71,4 +71,8 @@ outer : for(let item of lessons){
         }
     }
 }
+let arrayTest =[1,2,3,5];
+
+const[a, b, ...arrayRest] = arrayTest;
+arrayRest
 
