@@ -1,19 +1,20 @@
 
 function printTriangles(element, quantity) {
-  let line = [];
+  let line = []; 
   for (let i = 0; i < quantity; i++) {
     let lineElements = []
     for (let j = 0; j <= i; j++) {
       lineElements.push(element);
     }
     line.push(lineElements);
+    
   }
 
   for (let i = 0; i < line.length; i++) {
     console.log(line[i].join(' ') + ' \n');
   }
 }
-//printTriangles('#',10);
+printTriangles('#',10);
 function fizzBuzz(quantity) {
   let fizz = [];
   let buzz = [];
